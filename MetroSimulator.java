@@ -74,7 +74,7 @@ public class MetroSimulator{
 		mcpherson_square.connect(metro_center);
 		metro_center.connect(federal_triangle);
 		federal_triangle.connect(smithsonian);
-		smithsonian.makeEnd()
+		smithsonian.makeEnd();
 		return va_square;
 
 	}
@@ -86,17 +86,18 @@ public class MetroSimulator{
 		metro_center.addTransferStationPrev(farragut_north);
 		metro_center.addTransferStationNext(gallery_place);
 		gallery_place.connect(judiciary_square);
-		woodley_park.makeEnd();
+		judiciary_square.makeEnd();
 		return woodley_park;
 	}
 
 	public static EndStation makePurpleLine(){
 		s1.connect(s2);
+		s1.makeEnd();
 		s2.connect(s3);
 		metro_center.addTransferStationPrev(s3);
 		metro_center.addTransferStationNext(s4);
 		s4.connect(s5);
-
+		s5.makeEnd();
 		return s1;
 	}
 }
