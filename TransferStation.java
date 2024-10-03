@@ -12,4 +12,7 @@ class TransferStation extends Station{
 		nextSt.prev=this;
 		otherStations.add(nextSt);
 	}
+	public String toString(){
+		return("TRANSFER"+super.toString()+"Transfers: ");
+	}
 }

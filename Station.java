@@ -14,8 +14,11 @@ public class Station{
 		this.line="";
 		inService=true;
 	}
+	public boolean equals(Station st){
+		return(this.name==st.name&&this.line==st.line);
+	}
 	public String toString(){
-		String out="STATION "+name+" "+line+" line in service: "+String.valueOf(inService)+", previous station: ";
+		String out="STATION "+name+": "+line+" line, in service: "+String.valueOf(inService)+", previous station: ";
 		if(prev==null)out+="none";
 		else out+=prev.name;
 		out+=", next station: ";
@@ -23,18 +26,19 @@ public class Station{
 		else out+=next.name;
 		return(out);
 	}
-	public void addNext(Station next){
-		this.next=next;
+	public void addNext(Station nextSt){
+		this.next=nextSt;
+		nextSt.prev=this;
 	}
-	public void addPrev(Station prev){
-		this.prev=prev;
+	public void addPrev(Station prevSt){
+		this.prev=prevSt;
+		prevSt.next=this;
 	}
 	public int tripLength(Station endPoint){
 		return(-1);
 	}
 	public void connect(Station next){
 		this.addNext(next);
-		next.addPrev(this);
 	}
 	public boolean isAvailable(){
 		return(inService);

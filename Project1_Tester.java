@@ -11,6 +11,7 @@ public class Project1_Tester {
 
     Station s1 = new Station("pink", "Museum");
     String expected = "STATION Museum: pink line, in service: true, previous station: none, next station: none";
+    System.out.println(s1.toString());
     assertEquals(expected, s1.toString());
 
     Station s2 = new Station("green", "Square");
