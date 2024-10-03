@@ -259,7 +259,7 @@ public class Project1_Tester {
 
   @Test 
   public void test11(){
-    System.out.println("test short straight trips");
+    System.out.println("test short straight trips\n");
 
     EndStation s1 = new EndStation("pink", "Museum");
     Station s2 = new Station("pink", "Square");
@@ -270,7 +270,7 @@ public class Project1_Tester {
     s3.connect(s4);
     s1.makeEnd();
     s4.makeEnd();
-
+    System.out.println(s1.tripLength(s2));
     assertEquals(1, s1.tripLength(s2));
     assertEquals(3, s1.tripLength(s4));
     assertEquals(0, s1.tripLength(s1));
@@ -305,7 +305,7 @@ public class Project1_Tester {
     b4.connect(b5);
     b1.makeEnd();
     b5.makeEnd();
-
+    
     assertEquals(4, s1.tripLength(s4));
     assertEquals(4, s1.tripLength(b3));
     assertEquals(4, s1.tripLength(b4));
