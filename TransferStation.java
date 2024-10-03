@@ -13,6 +13,10 @@ class TransferStation extends Station{
 		otherStations.add(nextSt);
 	}
 	public String toString(){
-		return("TRANSFER"+super.toString()+"Transfers: ");
+		String out="TRANSFER"+super.toString()+"\n\tTransfers: \n";
+		for(int i=0;i<otherStations.size();i++){
+			out+="\t"+otherStations.get(i).toString()+"\n";
+		}
+		return(out);
 	}
 }

@@ -11,7 +11,6 @@ public class Project1_Tester {
 
     Station s1 = new Station("pink", "Museum");
     String expected = "STATION Museum: pink line, in service: true, previous station: none, next station: none";
-    System.out.println(s1.toString());
     assertEquals(expected, s1.toString());
 
     Station s2 = new Station("green", "Square");
@@ -99,7 +98,6 @@ public class Project1_Tester {
     TransferStation s1 = new TransferStation("pink", "Museum");
     String expected = "TRANSFERSTATION Museum: pink line, in service: true, previous station: none, next station: none\n\tTransfers: \n";
     assertEquals(expected, s1.toString());
-
     boolean result = false;
     if (s1 instanceof Station)
       result = true;
@@ -164,6 +162,7 @@ public class Project1_Tester {
     MetroSimulator.initialize();
     EndStation orange = MetroSimulator.makeOrangeLine();
     String expected = "ENDSTATION Virginia Square: orange line, in service: true, previous station: Clarendon, next station: Clarendon";
+    System.out.println(orange.toString());
     assertEquals(expected, orange.toString());
 
     Station next = orange.next;
