@@ -64,6 +64,7 @@ public class MetroSimulator{
 	}
 
 	public static EndStation makeOrangeLine(){
+		//Pretty simple just connecting each station to the next in the list
 		va_square.connect(clarendon);
 		va_square.makeEnd();
 		clarendon.connect(court_house);
@@ -72,6 +73,8 @@ public class MetroSimulator{
 		foggy_bottom.connect(farragut_west);
 		farragut_west.connect(mcpherson_square);
 		mcpherson_square.connect(metro_center);
+
+		//since transfer stations extend stations they have one pair of traditional next previous connections
 		metro_center.connect(federal_triangle);
 		federal_triangle.connect(smithsonian);
 		smithsonian.makeEnd();
@@ -83,8 +86,11 @@ public class MetroSimulator{
 		woodley_park.connect(dupont_circle);
 		woodley_park.makeEnd();
 		dupont_circle.connect(farragut_north);
+
+		//for alternate line connections to a station you must use add transfer next/previous as to not override the existing connection 
 		metro_center.addTransferStationPrev(farragut_north);
 		metro_center.addTransferStationNext(gallery_place);
+
 		gallery_place.connect(judiciary_square);
 		judiciary_square.makeEnd();
 		return woodley_park;

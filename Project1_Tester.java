@@ -306,11 +306,11 @@ public class Project1_Tester {
     b1.makeEnd();
     b5.makeEnd();
     
-    assertEquals(4, s1.tripLength(s4));
-    assertEquals(4, s1.tripLength(b3));
-    assertEquals(4, s1.tripLength(b4));
-    assertEquals(5, s1.tripLength(b5));
-    assertEquals(5, b1.tripLength(b5));
+    assertEquals(4, s4.tripLength(s1));
+    assertEquals(4, b3.tripLength(s1));
+    assertEquals(4, b4.tripLength(s1));
+    assertEquals(5, b5.tripLength(s1));
+    assertEquals(5, b5.tripLength(b1));
   }
 
 
@@ -327,6 +327,7 @@ public class Project1_Tester {
     assertEquals(9, MetroSimulator.va_square.tripLength(MetroSimulator.judiciary_square));
     assertEquals(4, MetroSimulator.foggy_bottom.tripLength(MetroSimulator.s4));
     assertEquals(3, MetroSimulator.s2.tripLength(MetroSimulator.gallery_place));
+    assertEquals(10,MetroSimulator.woodley_park.tripLength(MetroSimulator.va_square));
   }
 
 }
